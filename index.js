@@ -1,35 +1,34 @@
-console.log("Calculator")
-console.log(" ")
+console.log("Calculator");
+console.log(" ");
 
 
+function getValidNumber(promptMessage) {
+    let number;
+    while (true) {
+        let input = prompt(promptMessage, "0");
+        number = parseInt(input);
+        if (!isNaN(number)) {
+            return number;
+        }
+        console.log("invalid input, please enter a valid number.");
+    }
+}
+// added code above and from search and edited below blurb with search
 
-var x = prompt("Enter a Value", "0");
-var y = prompt("Enter a Value", "0");
-var z = prompt("choose a function (+,-,*,/)");
-var num1 = parseInt(x);
-var num2 = parseInt(y);
-
-
-if (z == "+") {
-    addNumber()
-} 
-
-else if (z == "-"){
-    subtractNumber()
+function getValidOperator(){
+    let operator;
+    while (true){
+        operator = prompt("Choose a function (+, -, *, /)");
+        if (operator == "+" || operator == "-" || operator == "*" || operator == "/"){
+            return operator;
+        }
+        console.log("invalid operator, please enter one of the following: +, -, *, /");
+    }
 }
 
-else if (z == "*"){
-    multiplyNumber();
-    console.log("multiply")
-}
-
-else if (z == "/"){
-    divideNumber()
-}
-
-else if (z != "+" || z != "-" || z!= "*" || z!= "/"){
-    var z = prompt("invalid input, re-enter (+,-,*,/)")
-}
+let num1 = getValidNumber("enter the first value (valid #)");
+let num2 = getValidNumber("enter the second value (valid #)");
+let operator = getValidOperator();
 
 
 function addNumber(){
@@ -48,6 +47,29 @@ function multiplyNumber(){
 }
 
 function divideNumber(){
+    if (num2 == 0){
+        console.log("cannot divide by 0");
+    } else {
     const result = num1 / num2;
     console.log(result);
+    }
+}
+
+// changed "z" to operator, accounting for new function
+
+if (operator == "+") {
+    addNumber();
+} 
+
+else if (operator == "-"){
+    subtractNumber();
+}
+
+else if (operator == "*"){
+    multiplyNumber();
+    console.log("multiply")
+}
+
+else if (operater == "/"){
+    divideNumber();
 }

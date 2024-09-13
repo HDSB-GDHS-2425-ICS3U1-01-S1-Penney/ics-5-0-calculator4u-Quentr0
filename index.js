@@ -1,4 +1,4 @@
-console.log("Calculator");
+console.log("Calc");
 console.log(" ");
 
 
@@ -10,7 +10,7 @@ function getValidNumber(promptMessage) {
         if (!isNaN(number)) {
             return number;
         }
-        console.log("invalid input, please enter a valid number.");
+        console.log("invalid input - enter a valid number");
     }
 }
 // added code above and from search and edited below blurb with search
@@ -18,18 +18,21 @@ function getValidNumber(promptMessage) {
 function getValidOperator(){
     let operator;
     while (true){
-        operator = prompt("Choose a function (+, -, *, /)");
+        operator = prompt("choose a function (+, -, *, /)");
         if (operator == "+" || operator == "-" || operator == "*" || operator == "/"){
             return operator;
         }
-        console.log("invalid operator, please enter one of the following: +, -, *, /");
+        console.log("invalid operator - enter one of the following: +, -, *, /");
     }
 }
 
 let num1 = getValidNumber("enter the first value (valid #)");
 let num2 = getValidNumber("enter the second value (valid #)");
+let num3 = getValidNumber("enter the third value (valid #)");
 let operator = getValidOperator();
+let operator2 = getValidOperator();
 
+// ---------------------------------
 
 function addNumber(){
     const result = num1 + num2;
@@ -48,14 +51,108 @@ function multiplyNumber(){
 
 function divideNumber(){
     if (num2 == 0){
-        console.log("cannot divide by 0");
+        console.log("cannot divide by 0 - retry");
     } else {
     const result = num1 / num2;
     console.log(result);
     }
 }
 
-// changed "z" to operator, accounting for new function
+// ---------------------------------
+
+function addAddNumber(){
+    const result = num1 + num2 + num3;
+    console.log(result);
+}
+
+function addSubtractNumber(){
+    const result = num1 + num2 - num3;
+    console.log(result);
+}
+
+function addMultiplyNumber(){
+    const result = num1 + num2 * num3;
+    console.log(result);
+}
+
+function addDivideNumber(){
+    const result = num1 + num2 / num3;
+    console.log(result);
+}
+
+// ---------------------------------
+
+function subtractAddNumber(){
+    const result = num1 - num2 + num3;
+    console.log(result);
+}
+
+function subtractSubtractNumber(){
+    const result = num1 - num2 - num3;
+    console.log(result);
+}
+
+function subtractMultiplyNumber(){
+    const result = num1 - num2 * num3;
+    console.log(result);
+}
+
+function subtractDivideNumber(){
+    const result = num1 - num2 / num3;
+    console.log(result);
+}
+
+// ---------------------------------
+
+function multiplyAddNumber(){
+    const result = num1 * num2 + num3;
+    console.log(result);
+}
+
+function multiplySubtractNumber(){
+    const result = num1 * num2 - num3;
+    console.log(result);
+}
+
+function multiplyMultiplyNumber(){
+    const result = num1 * num2 * num3;
+    console.log(result);
+}
+
+function multiplyDivideNumber(){
+    const result = num1 * num2 / num3;
+    console.log(result);
+}
+
+// ---------------------------------
+
+function divideAddNumber(){
+    const result = num1 / num2 + num3;
+    console.log(result);
+}
+
+function divideSubtractNumber(){
+    const result = num1 / num2 - num3;
+    console.log(result);
+}
+
+function divideMultiplyNumber(){
+    const result = num1 / num2 * num3;
+    console.log(result);
+}
+
+function divideDivideNumber(){
+    const result = num1 / num2 / num3;
+    console.log(result);
+}
+
+// ---------------------------------
+
+
+
+
+
+// ---------------------------------
 
 if (operator == "+") {
     addNumber();
@@ -67,9 +164,44 @@ else if (operator == "-"){
 
 else if (operator == "*"){
     multiplyNumber();
-    console.log("multiply")
 }
 
-else if (operater == "/"){
+else if (operator == "/"){
     divideNumber();
 }
+
+// ---------------------------------
+
+if (operator == "+" || operator2 == "+") {
+    addAddNumber();
+} 
+
+else if (operator == "+" || operator2 == "-") {
+    addSubtractNumber();
+} 
+
+if (operator == "+" || operator2 == "*") {
+    addMultiplyNumber();
+} 
+
+if (operator == "+" || operator2 == "/") {
+    addDivideNumber();
+} 
+
+// ---------------------------------
+
+
+
+
+else if (operator == "-"){
+    subtractNumber();
+}
+
+else if (operator == "*"){
+    multiplyNumber();
+}
+
+else if (operator == "/"){
+    divideNumber();
+}
+

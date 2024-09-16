@@ -1,7 +1,14 @@
+// NAME: Quentin Robinson
+// DATE: 9/16/24
+// TITLE: Calc (short for calculator if you're just joining)
+
+
+// state name of the 'app'
 console.log("Calc");
+console.log("if adding two numbers, click 0 and '+' operation")
 console.log(" ");
 
-
+// ask for a number, if invalid ask again
 function getValidNumber(promptMessage) {
     let number;
     while (true) {
@@ -13,135 +20,132 @@ function getValidNumber(promptMessage) {
         console.log("invalid input - enter a valid number");
     }
 }
-// added code above and from search and edited below blurb with search
 
-function getValidOperator(){
+// ask for an operator, if invalid ask again
+function getValidOperator(text) {
     let operator;
-    while (true){
-        operator = prompt("choose a function (+, -, *, /)");
-        if (operator == "+" || operator == "-" || operator == "*" || operator == "/"){
+    while (true) {
+        operator = prompt(`choose a function (+, -, *, /) for ${text}`);
+        if (operator == "+" || operator == "-" || operator == "*" || operator == "/") {
             return operator;
         }
         console.log("invalid operator - enter one of the following: +, -, *, /");
     }
 }
 
-let num1 = getValidNumber("enter the first value (valid #)");
-let num2 = getValidNumber("enter the second value (valid #)");
-let num3 = getValidNumber("enter the third value (valid #)");
-let operator = getValidOperator();
-let operator2 = getValidOperator();
+// claim variables as what the user inputs
+let num1 = getValidNumber("enter the first value (valid #)"); // first value
+let num2 = getValidNumber("enter the second value (valid #)"); // second value
+let num3 = getValidNumber("enter the third value (valid #)"); // third value
 
-// ---------------------------------
+let operator = getValidOperator("function one"); // first operator
+let operator2 = getValidOperator(); // second operator
 
-function addNumber(){
-    const result = num1 + num2;
-    console.log(result);
-}
 
-function subtractNumber(){
-    const result = num1 - num2;
-    console.log(result);
-}
+// run functions to add, subtract, etc. 3 numbers
 
-function multiplyNumber(){
-    const result = num1 * num2;
-    console.log(result);
-}
+// --------------------------------- adding primary
 
-function divideNumber(){
-    if (num2 == 0){
-        console.log("cannot divide by 0 - retry");
-    } else {
-    const result = num1 / num2;
-    console.log(result);
-    }
-}
-
-// ---------------------------------
-
-function addAddNumber(){
+function addAddNumber() {
     const result = num1 + num2 + num3;
     console.log(result);
 }
 
-function addSubtractNumber(){
+
+function addSubtractNumber() {
     const result = num1 + num2 - num3;
     console.log(result);
 }
 
-function addMultiplyNumber(){
+
+function addMultiplyNumber() {
     const result = num1 + num2 * num3;
     console.log(result);
 }
 
-function addDivideNumber(){
+
+function addDivideNumber() {
     const result = num1 + num2 / num3;
     console.log(result);
 }
 
-// ---------------------------------
 
-function subtractAddNumber(){
+// --------------------------------- subtracting primary
+
+
+function subtractAddNumber() {
     const result = num1 - num2 + num3;
     console.log(result);
 }
 
-function subtractSubtractNumber(){
+
+function subtractSubtractNumber() {
     const result = num1 - num2 - num3;
     console.log(result);
 }
 
-function subtractMultiplyNumber(){
+
+function subtractMultiplyNumber() {
     const result = num1 - num2 * num3;
     console.log(result);
 }
 
-function subtractDivideNumber(){
+
+function subtractDivideNumber() {
     const result = num1 - num2 / num3;
     console.log(result);
 }
 
-// ---------------------------------
 
-function multiplyAddNumber(){
+// --------------------------------- multiplying primary
+
+
+function multiplyAddNumber() {
     const result = num1 * num2 + num3;
     console.log(result);
 }
 
-function multiplySubtractNumber(){
+
+function multiplySubtractNumber() {
     const result = num1 * num2 - num3;
     console.log(result);
 }
 
-function multiplyMultiplyNumber(){
+
+function multiplyMultiplyNumber() {
     const result = num1 * num2 * num3;
     console.log(result);
 }
 
-function multiplyDivideNumber(){
+
+function multiplyDivideNumber() {
     const result = num1 * num2 / num3;
     console.log(result);
 }
 
-// ---------------------------------
 
-function divideAddNumber(){
+// --------------------------------- dividing primary
+
+
+function divideAddNumber() {
     const result = num1 / num2 + num3;
     console.log(result);
 }
 
-function divideSubtractNumber(){
+
+function divideSubtractNumber() {
     const result = num1 / num2 - num3;
     console.log(result);
 }
 
-function divideMultiplyNumber(){
+
+function divideMultiplyNumber() {
     const result = num1 / num2 * num3;
     console.log(result);
 }
 
-function divideDivideNumber(){
+
+function divideDivideNumber() {
     const result = num1 / num2 / num3;
     console.log(result);
 }
@@ -149,59 +153,88 @@ function divideDivideNumber(){
 // ---------------------------------
 
 
+// --------------------------------- in prompt, if adding primary run corresponding function
 
 
-
-// ---------------------------------
-
-if (operator == "+") {
-    addNumber();
-} 
-
-else if (operator == "-"){
-    subtractNumber();
-}
-
-else if (operator == "*"){
-    multiplyNumber();
-}
-
-else if (operator == "/"){
-    divideNumber();
-}
-
-// ---------------------------------
-
-if (operator == "+" || operator2 == "+") {
+if (operator == "+" && operator2 == "+") {
     addAddNumber();
-} 
+}
 
-else if (operator == "+" || operator2 == "-") {
+
+else if (operator == "+" && operator2 == "-") {
     addSubtractNumber();
-} 
+}
 
-if (operator == "+" || operator2 == "*") {
+
+else if (operator == "+" && operator2 == "*") {
     addMultiplyNumber();
-} 
+}
 
-if (operator == "+" || operator2 == "/") {
+
+else if (operator == "+" && operator2 == "/") {
     addDivideNumber();
-} 
-
-// ---------------------------------
-
-
-
-
-else if (operator == "-"){
-    subtractNumber();
 }
 
-else if (operator == "*"){
-    multiplyNumber();
+
+// --------------------------------- in prompt, if subtracting primary run corresponding function
+
+if (operator == "-" && operator2 == "+") {
+    subtractAddNumber();
 }
 
-else if (operator == "/"){
-    divideNumber();
+
+else if (operator == "-" && operator2 == "-") {
+    subtractSubtractNumber();
 }
 
+
+else if (operator == "-" && operator2 == "*") {
+    subtractMultiplyNumber();
+}
+
+
+else if (operator == "-" && operator2 == "/") {
+    subtractDivideNumber();
+}
+
+// --------------------------------- in prompt, if multiplying primary run corresponding function
+
+if (operator == "*" && operator2 == "+") {
+    multiplyAddNumber();
+}
+
+
+else if (operator == "*" && operator2 == "-") {
+    multiplySubtractNumber();
+}
+
+
+else if (operator == "*" && operator2 == "*") {
+    multiplyMultiplyNumber();
+}
+
+
+else if (operator == "*" && operator2 == "/") {
+    multiplyDivideNumber();
+}
+
+// --------------------------------- in prompt, if dividing primary run corresponding function
+
+if (operator == "/" && operator2 == "+") {
+    divideAddNumber();
+}
+
+
+else if (operator == "/" && operator2 == "-") {
+    divideSubtractNumber();
+}
+
+
+else if (operator == "/" && operator2 == "*") {
+    divideMultiplyNumber();
+}
+
+
+else if (operator == "*/" && operator2 == "/") {
+    divideDivideNumber();
+}

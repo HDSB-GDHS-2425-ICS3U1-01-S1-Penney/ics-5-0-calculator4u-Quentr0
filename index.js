@@ -39,7 +39,7 @@ let num2 = getValidNumber("enter the second value (valid #)"); // second value
 let num3 = getValidNumber("enter the third value (valid #)"); // third value
 
 let operator = getValidOperator("function one"); // first operator
-let operator2 = getValidOperator(); // second operator
+let operator2 = getValidOperator("function two"); // second operator
 
 
 // run functions to add, subtract, etc. 3 numbers
